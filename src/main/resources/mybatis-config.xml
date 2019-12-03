@@ -7,14 +7,25 @@
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="${driver}"/>
-                <property name="url" value="${url}"/>
-                <property name="username" value="${username}"/>
-                <property name="password" value="${password}"/>
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.1.5:3306/mybatisTest"/>
+                <property name="username" value="root"/>
+                <property name="password" value="21231121"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="Student.xml"/>
+<!--        <mapper resource="com/iroving/mybatis/dao/StudentMapper.xml"/>-->
+        <mapper class="com.iroving.mybatis.dao.StudentMapper"/>
     </mappers>
+<!--    <mappers>-->
+<!--        &lt;!&ndash; 通过package元素将会把指定包下面的所有Mapper接口进行注册 &ndash;&gt;-->
+<!--        <package name="com.tiantian.mybatis.mapperinterface"/>-->
+<!--        &lt;!&ndash; 通过mapper元素的resource属性可以指定一个相对于类路径的Mapper.xml文件 &ndash;&gt;-->
+<!--        <mapper resource="com/tiantian/mybatis/mapper/UserMapper.xml"/>-->
+<!--        &lt;!&ndash; 通过mapper元素的url属性可以指定一个通过URL请求道的Mapper.xml文件 &ndash;&gt;-->
+<!--        <mapper url="file:///E:/UserMapper.xml"/>-->
+<!--        &lt;!&ndash; 通过mapper元素的class属性可以指定一个Mapper接口进行注册 &ndash;&gt;-->
+<!--        <mapper class="com.tiantian.mybatis.mapperinterface.UserMapper"/>-->
+<!--    </mappers>-->
 </configuration>
